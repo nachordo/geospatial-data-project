@@ -8,7 +8,7 @@ Created on Fri Nov 13 18:54:09 2020
 import pandas as pd
 from pymongo import MongoClient
 from bson import ObjectId
-
+import time
 
 
 def obtain_1m(value):
