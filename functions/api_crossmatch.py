@@ -20,7 +20,7 @@ def airport_info(df,id_4sq,tk_4sq):
     for i in range(len(df)):
         if i%25==0:
             print("Airport",i,len(df)-i)
-        time.sleep(3)
+        time.sleep(2)
         params = dict(
         client_id=id_4sq,
         client_secret=tk_4sq,
@@ -60,7 +60,7 @@ def basket_info(df,id_4sq,tk_4sq):
     for i in range(len(df)):
         if i%25==0:
             print("Basket",i,len(df)-i)
-        time.sleep(3)
+        time.sleep(2)
         params = dict(
         client_id=id_4sq,
         client_secret=tk_4sq,
@@ -68,7 +68,7 @@ def basket_info(df,id_4sq,tk_4sq):
         ll=str(df["latitude"][i])+","+str(df["longitude"][i]),
         limit=1,
         categoryId="4bf58dd8d48988d18b941735",
-        radius=15_000 
+        radius=10_000 
         )
         resp = requests.get(url=url, params=params)
         data = json.loads(resp.text)
@@ -104,7 +104,7 @@ def veg_info(df,id_4sq,tk_4sq):
     for i in range(len(df)):
         if i%25==0:
             print("Vegan",i,len(df)-i)
-        time.sleep(3)
+        time.sleep(2)
         params = dict(
         client_id=id_4sq,
         client_secret=tk_4sq,
@@ -148,7 +148,7 @@ def night_info(df,id_4sq,tk_4sq):
     for i in range(len(df)):
         if i%25==0:
             print("Night",i,len(df)-i)
-        time.sleep(3)
+        time.sleep(2)
         params = dict(
         client_id=id_4sq,
         client_secret=tk_4sq,
@@ -193,7 +193,7 @@ def daycare_info(df,id_4sq,tk_4sq):
     for i in range(len(df)):
         if i%25==0:
             print("Daycare",i,len(df)-i)
-        time.sleep(3)
+        time.sleep(2)
         params = dict(
         client_id=id_4sq,
         client_secret=tk_4sq,
@@ -235,7 +235,7 @@ def pet_info(df,id_4sq,tk_4sq):
     for i in range(len(df)):
         if i%25==0:
             print("Pet",i,len(df)-i)
-        time.sleep(3)
+        time.sleep(2)
         params = dict(
         client_id=id_4sq,
         client_secret=tk_4sq,

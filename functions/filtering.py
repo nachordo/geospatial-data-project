@@ -109,6 +109,7 @@ def filtering(client):
     return df
 
 
+    
 def obtain_list(client,closest):
     db = client.get_database("companies")
     offices =db.offices

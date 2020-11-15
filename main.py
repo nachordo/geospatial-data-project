@@ -33,8 +33,7 @@ id_4sq = os.getenv("FOURSQ_ID")
 tk_4sq = os.getenv("FOURSQ_SEC")
 #temporal_database/
 candidates.to_csv('temporal_database/candidates_pre_apis.csv')
-candidates=airport_info(candidates,id_4sq,tk_4sq)
-candidates.to_csv('temporal_database/candidates_airports.csv')
+
 candidates=veg_info(candidates,id_4sq,tk_4sq)
 candidates.to_csv('temporal_database/candidates_veg.csv')
 candidates=basket_info(candidates,id_4sq,tk_4sq)
@@ -45,4 +44,7 @@ candidates=daycare_info(candidates,id_4sq,tk_4sq)
 candidates.to_csv('temporal_database/candidates_daycare.csv')
 candidates=pet_info(candidates,id_4sq,tk_4sq)
 candidates.to_csv('temporal_database/candidates_pet_4sq_end.csv')
+
+candidates=airport_info(candidates,id_4sq,tk_4sq)
+candidates.to_csv('temporal_database/candidates_airports_def.csv')
 
