@@ -20,18 +20,18 @@ In this project I had to plan the location of a company in the `GAMING industry`
 
 9- The office dog "Pepe" needs a hairdresser every month. Ensure there's one not too far away.
 
-As it is impossible to cover all of them, the goal is to choose the one that is the most appropiate.
+As it is impossible to cover all of them, the goal is to choose the one that fulfils most of them, or to cover as many requirements as possible for this project.
 
-The project is structured in different parts. First, I filtered the list of office candidates. Later, through API I will query the coordinates within certain distance treshold certains spots that fullfils the conditions asked. Lasly, I analize the results and choose the best office location.
+The project is structured in different parts. First, I filtered the list of office candidates. Later, through API I will query the coordinates within a certain distance threshold certain spots that fulfils the conditions asked. Lasly, I analyze the results and choose the best office location.
 
-The filtering and API querying proccess are executed through `main.py`, and it is explained in detail in the [filtering_process.md](https://github.com/nachordo/geospatial-data-project/blob/main/filtering_process.md). The decision process analysis is performed in the [analysis.ipynb](https://github.com/nachordo/geospatial-data-project/blob/main/analysis.ipynb) notebook by loading the csv file with the desition parameters previously computed. I used a python notebook as it is better to explain the it step by step and to show the results in the map.
+The filtering and API querying process are executed through `main.py`, and it is explained in detail in the [filtering_process.md](https://github.com/nachordo/geospatial-data-project/blob/main/filtering_process.md). The decision process analysis is performed in the [analysis.ipynb](https://github.com/nachordo/geospatial-data-project/blob/main/analysis.ipynb) notebook by loading the csv file with the decision parameters previously computed. I used a python notebook as it is better to explain it step by step and to show the results in the map.
 
 
 ![Gaming company](https://officesnapshots.com/wp-content/uploads/2016/06/avant-chicago-office-design-21.jpg)
 
 ## Strategy to filter first
 
-In order to choose the best location, I needed to list all the different offices in a single MongoDB collection, so companies with various offices needed to be “unwinded”. I chose the first and third conditions to filter among all the possible candidates, so I can save API queries to retrieve the information from other conditions, and to finish the project before the deadline. This first filter has more sense to be applied, as other conditions are easier to meet in locations active and crowded. So I will examine the conditions for other variables based on the proximity to a design company or a succesful tech company.
+In order to choose the best location, I needed to list all the different offices in a single MongoDB collection, so companies with various offices needed to be “unwinded”. I chose the first and third conditions to filter among all the possible candidates, so I can save API queries to retrieve the information from other conditions, and to finish the project before the deadline. This first filter has more sense to be applied, as other conditions are easier to meet in locations active and crowded. So I will examine the conditions for other variables based on the proximity to a design company or a successful tech company.
 
 ## Using the Foursquare API to retrieve information about other conditions
 
@@ -39,11 +39,11 @@ In the Foursquare database, places are grouped among categories that are easy to
 
 ## Quantifying how conditions are met to provide the best location
 
-There are conditions that are either met or not met, but others are based on whether there are some determinated spots nearby. To do something different, I introduced sigmoid functions to not to assign just 0 or 1, so I put intermediate values in distances that might be in the limit. Also, for other ones I introuduced that to get the complete point there should be variety of laces, as in the the vegan restaurants or nightlife party places.
+There are conditions that are either met or not met, but others are based on whether there are some determined spots nearby. To do something different, I introduced sigmoid functions to not to assign just 0 or 1, so I put intermediate values in distances that might be in the limit. Also, for other ones I introduced that to get the complete point there should be a variety of places, as in the vegan restaurants or nightlife party places.
 
 ![Sigmoid](https://www.researchgate.net/profile/Tali_Leibovich-Raveh/publication/325868989/figure/fig2/AS:639475206074368@1529474178211/A-Basic-sigmoid-function-with-two-parameters-c1-and-c2-as-commonly-used-for-subitizing.png)
 
-This allows to create a score to quantify the better option, and to store possible alternatives based on the mentioned score if the first one is rejected for some hypotetical reason.
+This allows to create a score to quantify the better option, and to store possible alternatives based on the mentioned score if the first one is rejected for some hypothetical reason.
 
 Lastly, with the folium library, I represented the best location according to this metric and represented it in a map, along with the required places as well.
 
@@ -52,6 +52,9 @@ Lastly, with the folium library, I represented the best location according to th
 
 ## Final thoughts
 
+There are many things that for a bigger project could be improved easily. For example obtaining the sigmoid score for each location nearby, having a higher limit for each spot, obtaining also more child daycare places or more pet caring places,... But for a weekend project I show the possibilities of this kind of analysis. In the map created with `folium` is shown in a very visual way the results of the project. This is a very useful tool to visualize map information with very few command lines.
 
+I skipped the Starbucks part that I planned to do with the Google Places API. Due to time constraints I decided to focus on the other requirements and work on a refined scoring system to show the possibilities to select the most appropriate location with the scheme that I designed for this project.
+  
 
 

@@ -16,8 +16,10 @@ import time
 
 # Obtain the haversine distance between two places
 def obtain_dist(c_a,c_b):
+    # Convert angle to radians 
     ca_in_radians = [radians(_) for _ in c_a]
     cb_in_radians = [radians(_) for _ in c_b]
+    # Obtain the haversine distance
     result = haversine_distances([ca_in_radians, cb_in_radians])
     return result[0][1] * 6371000
     
