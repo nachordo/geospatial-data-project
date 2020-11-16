@@ -24,7 +24,7 @@ As it is impossible to cover all of them, the goal is to choose the one that is 
 
 The project is structured in different parts. First, I filtered the list of office candidates. Later, through API I will query the coordinates within certain distance treshold certains spots that fullfils the conditions asked. Lasly, I analize the results and choose the best office location.
 
-The filtering and API querying proccess are executed through `main.py`, and it is explained in detail in the `filtering_process.md`. The decision process analysis is performed in the `analysis.ipynb` notebook by loading the csv file with the desition parameters previously computed. I used a python notebook as it is better to explain the it step by step and to show the results in the map.
+The filtering and API querying proccess are executed through `main.py`, and it is explained in detail in the [filtering_process.md](https://github.com/nachordo/geospatial-data-project/blob/main/filtering_process.md). The decision process analysis is performed in the [analysis.ipynb](https://github.com/nachordo/geospatial-data-project/blob/main/analysis.ipynb) notebook by loading the csv file with the desition parameters previously computed. I used a python notebook as it is better to explain the it step by step and to show the results in the map.
 
 
 ![Gaming company](https://officesnapshots.com/wp-content/uploads/2016/06/avant-chicago-office-design-21.jpg)
