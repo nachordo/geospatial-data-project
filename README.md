@@ -41,7 +41,17 @@ In the Foursquare database, places are grouped among categories that are easy to
 
 There are conditions that are either met or not met, but others are based on whether there are some determinated spots nearby. To do something different, I introduced sigmoid functions to not to assign just 0 or 1, so I put intermediate values in distances that might be in the limit. Also, for other ones I introuduced that to get the complete point there should be variety of laces, as in the the vegan restaurants or nightlife party places.
 
+![Sigmoid](https://www.researchgate.net/profile/Tali_Leibovich-Raveh/publication/325868989/figure/fig2/AS:639475206074368@1529474178211/A-Basic-sigmoid-function-with-two-parameters-c1-and-c2-as-commonly-used-for-subitizing.png)
+
 This allows to create a score to quantify the better option, and to store possible alternatives based on the mentioned score if the first one is rejected for some hypotetical reason.
+
+Lastly, with the folium library, I represented the best location according to this metric and represented it in a map, along with the required places as well.
+
+![The map](images/map_nearby.png)
+
+
+## Final thoughts
+
 
 
 
